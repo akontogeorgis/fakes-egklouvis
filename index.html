@@ -203,14 +203,45 @@
       gap: 12px;
     }
   }
+
+  /* burger
+  */
+  .nav-links {
+    display: flex;
+    list-style: none;
+    padding: 0;
+  }
+
+  .burger {
+    display: none;
+    font-size: 2rem;
+    background: none;
+    border: none;
+    cursor: pointer;
+  }
+
+  /* On small screens */
+  @media (max-width: 600px) {
+    .nav-links {
+      display: none;
+      flex-direction: column;
+    }
+    .burger {
+      display: block;
+    }
+    .nav-links.active {
+      display: flex;
+    }
+  }
+
 </style>
 </head>
 <body>
-
 <nav>
   <div class="container">
     <div class="logo">Φακές Εγκλουβής</div>
-    <ul>
+    <button class="burger" aria-label="Toggle menu">&#9776;</button>
+    <ul class="nav-links">
       <li><a href="#about" class="active">Η Εγκλουβή</a></li>
       <li><a href="#cultivation">Καλλιέργεια</a></li>
       <li><a href="#history">Ιστορία</a></li>
@@ -218,6 +249,7 @@
       <li><a href="#contact">Επικοινωνία</a></li>
     </ul>
   </div>
+
 </nav>
 
 <div class="spacer"></div>
@@ -324,6 +356,13 @@
     });
   });
 </script>
+<script>
+  const burger = document.querySelector('.burger');
+  const navLinks = document.querySelector('.nav-links');
 
+  burger.addEventListener('click', () => {
+    navLinks.classList.toggle('active');
+  });
+</script>
 </body>
 </html>
