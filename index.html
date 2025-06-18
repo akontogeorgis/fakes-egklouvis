@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="el">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Φακές Εγκλουβής - Παράδοση & Καλλιέργεια</title>
+
+<!-- AOS Animate On Scroll CSS -->
+<link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+
+<style>
+  /* Reset */
+  body, html {
+    margin: 0; padding: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: #f5f5f5;
+    color: #fff;
+    scroll-behavior: smooth;
+  }
+  a {
+    color: #ffd54f;
+    text-decoration: none;
+  }
+  a:hover {
+    text-decoration: underline;
+  }
+
+  /* Navbar */
+  nav {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background: #2e4a2e;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.8);
+    z-index: 100;
+  }
+  nav .container {
+    max-width: 1100px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+  }
+  nav .logo {
+    font-weight: 700;
+    font-size: 1.4rem;
+    color: #ffd54f;
+  }
+  nav ul {
+    list-style: none;
+    display: flex;
+    gap: 22px;
+  }
+  nav ul li {
+    font-weight: 600;
+  }
+  nav ul li a {
+    color: #fff;
+    font-size: 1rem;
+    padding: 6px 10px;
+    border-radius: 6px;
+    transition: background-color 0.3s ease;
+  }
+  nav ul li a:hover, nav ul li a.active {
+    background-color: #ffd54f;
+    color: #2e4a2e;
+  }
+
+  /* Spacer for fixed navbar */
+  .spacer {
+    height: 60px;
+  }
+
+  /* Container */
+  .container {
+    width: 90%;
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 40px 0;
+  }
+
+  /* Header */
+  header {
+    background: url('images/image7.webp') no-repeat center center/cover;
+    height: 90vh;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 60px; /* navbar height */
+  }
+  header::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: rgba(0,0,0,0.6);
+  }
+  header .header-text {
+    position: relative;
+    max-width: 700px;
+    text-align: center;
+    z-index: 10;
+  }
+  header h1 {
+    font-size: 3.5rem;
+    margin-bottom: 20px;
+    text-shadow: 2px 2px 6px #000;
+  }
+  header p {
+    font-size: 1.3rem;
+    line-height: 1.5;
+    text-shadow: 1px 1px 4px #000;
+  }
+
+  /* Sections */
+  section {
+    background: #2e4a2e;
+    margin-bottom: 60px;
+    border-radius: 12px;
+    box-shadow: 0 6px 15px rgba(0,0,0,0.3);
+  }
+  section.alt {
+    background: #3c6231;
+  }
+  section.alt2 {
+    background: #39562a;
+  }
+  section .container {
+    padding: 50px 30px;
+    color: #fff;
+  }
+  section h2 {
+    margin-bottom: 25px;
+    font-size: 2.5rem;
+    text-align: center;
+    text-shadow: 1px 1px 4px #000;
+  }
+  section p, section ul {
+    font-size: 1.15rem;
+    line-height: 1.6;
+    max-width: 900px;
+    margin: 0 auto 25px auto;
+    text-align: justify;
+  }
+  section ul {
+    list-style: disc inside;
+  }
+  section ul li {
+    margin-bottom: 10px;
+  }
+
+  /* Text Overlay */
+  .text-overlay {
+    background-color: rgba(0, 0, 0, 0.5);
+    padding: 25px 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.4);
+  }
+
+  /* Images */
+  .image-wrapper {
+    position: relative;
+    max-width: 100%;
+    margin: 40px auto;
+    overflow: hidden;
+    border-radius: 15px;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.5);
+  }
+  .image-wrapper img {
+    width: 100%;
+    display: block;
+    transition: transform 0.8s ease;
+  }
+  .image-wrapper:hover img {
+    transform: scale(1.05);
+  }
+
+  /* Footer */
+  footer {
+    text-align: center;
+    padding: 25px 0;
+    background: #1b2c1b;
+    color: #ccc;
+    font-size: 0.9rem;
+  }
+  footer a {
+    color: #ffd54f;
+  }
+  footer a:hover {
+    color: #fff;
+  }
+
+  /* Responsive */
+  @media (max-width: 768px) {
+    header h1 {
+      font-size: 2.2rem;
+    }
+    section h2 {
+      font-size: 1.8rem;
+    }
+    nav ul {
+      gap: 12px;
+    }
+  }
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="container">
+    <div class="logo">Φακές Εγκλουβής</div>
+    <ul>
+      <li><a href="#about" class="active">Η Εγκλουβή</a></li>
+      <li><a href="#cultivation">Καλλιέργεια</a></li>
+      <li><a href="#history">Ιστορία</a></li>
+      <li><a href="#taste">Γεύση & Θρέψη</a></li>
+      <li><a href="#contact">Επικοινωνία</a></li>
+    </ul>
+  </div>
+</nav>
+
+<div class="spacer"></div>
+
+<header>
+  <div class="header-text" data-aos="fade-down">
+    <h1>Φακές Εγκλουβής</h1>
+    <p>Η παράδοση και η καλλιέργεια των φακών του χωριού μας στην Εγκλουβή Λευκάδας</p>
+  </div>
+</header>
+
+<!-- About Section -->
+<section id="about" data-aos="fade-up">
+  <div class="container text-overlay">
+    <h2>Η Εγκλουβή - Η μικρή ορεινή κοινότητα</h2>
+    <p>Η μικρή ορεινή κοινότητα της Εγκλουβής, χτισμένη σε υψόμετρο περίπου 800 μ. στο κέντρο της Λευκάδας, καλλιεργεί εδώ και αιώνες μία από τις πιο φημισμένες ποικιλίες φακής στην Ελλάδα – τη φημισμένη φακή Εγκλουβής.</p>
+    <p>Με πλούσιο άρωμα, ξεχωριστή γεύση και υψηλή διατροφική αξία, οι φακές μας καλλιεργούνται με παραδοσιακό τρόπο σε ξερολιθικά πλατώματα, χωρίς χρήση φυτοφαρμάκων ή λιπασμάτων.</p>
+  </div>
+  <div class="image-wrapper" data-aos="zoom-in">
+    <img src="images/faki-egklouvis.jpg" alt="Χωράφι με φακές" />
+  </div>
+</section>
+
+<!-- Cultivation Section -->
+<section id="cultivation" class="" data-aos="fade-up">
+  <div class="container text-overlay">
+    <h2>Η Καλλιέργεια - Από τη σπορά ως τη συγκομιδή</h2>
+    <p>Η καλλιέργεια γίνεται χειρωνακτικά με παραδοσιακές τεχνικές. Η σπορά ξεκινά την άνοιξη σε φυσικές συνθήκες και η συγκομιδή ολοκληρώνεται με το χέρι, το καλοκαίρι.</p>
+    <p>Η φακή στεγνώνει φυσικά, αλωνίζεται και καθαρίζεται με επιμέλεια από τον τοπικό πληθυσμό, εξασφαλίζοντας υψηλή ποιότητα χωρίς τεχνητά μέσα.</p>
+  </div>
+  <div class="image-wrapper" data-aos="zoom-in">
+    <img src="images/Καλλιέργεια Φακής.jpg" alt="Παραδοσιακό χωριό" />
+  </div>
+</section>
+
+<!-- History Section -->
+<section id="history" class="alt" data-aos="fade-up">
+  <div class="container text-overlay">
+    <h2>Ιστορία - Μια παράδοση αιώνων</h2>
+    <p>Οι πρώτες αναφορές στη φακή Εγκλουβής χρονολογούνται από τη Βυζαντινή περίοδο. Σήμερα αποτελεί προϊόν ΠΟΠ και είναι συνδεδεμένη με την τοπική ταυτότητα.</p>
+    <p>Κάθε Αύγουστο, η τοπική γιορτή της φακής τιμά την παράδοση, συγκεντρώνοντας ντόπιους και επισκέπτες για μουσική, χορό και φακόρυζο!</p>
+  </div>
+  <div class="image-wrapper" data-aos="zoom-in">
+    <img src="images/image5.webp" alt="Πλατεία χωριού" />
+  </div>
+</section>
+
+<!-- Taste & Nutrition Section -->
+<section id="taste" data-aos="fade-up">
+  <div class="container text-overlay">
+    <h2>Η Γεύση και Θρεπτική Αξία των Φακών Εγκλουβής</h2>
+    <p>Οι φακές Εγκλουβής ξεχωρίζουν για τη μοναδική τους γεύση και την πλούσια θρεπτική τους αξία. Είναι πλούσιες σε πρωτεΐνες, φυτικές ίνες, βιταμίνες και ανόργανα στοιχεία, καθιστώντας τις ιδανική επιλογή για μια υγιεινή διατροφή.</p>
+    <p>Η καλλιέργεια στον τόπο μας προσδίδει ιδιαίτερα χαρακτηριστικά, χάρη στο μοναδικό μικροκλίμα και το έδαφος της περιοχής.</p>
+  </div>
+  <div class="image-wrapper" data-aos="zoom-in">
+    <img src="images/proionta-caro.original.jpg" alt="Φακές σε μπολ" />
+  </div>
+</section>
+
+<!-- Contact Section -->
+<section id="contact" class="alt2" data-aos="fade-up">
+  <div class="container text-overlay">
+    <h2>Επικοινωνία</h2>
+    <p>Για περισσότερες πληροφορίες και συνεργασίες, επικοινωνήστε μαζί μας:</p>
+    <ul>
+      <li>Τηλέφωνο: +30 690 123 4567</li>
+      <li>Email: info@eglouvi-lentils.gr</li>
+      <li>Διεύθυνση: Εγκλουβή, Λευκάδα, Ελλάδα</li>
+    </ul>
+  </div>
+</section>
+
+<footer>
+  <p>© 2025 Φακές Εγκλουβής | Όλα τα δικαιώματα διατηρούνται</p>
+  <p><a href="#top">Επιστροφή στην κορυφή ↑</a></p>
+</footer>
+
+<!-- AOS Animate On Scroll JS -->
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script>
+  AOS.init({
+    duration: 1200,
+    once: true,
+  });
+
+  // Navbar active link on scroll
+  const sections = document.querySelectorAll('section');
+  const navLinks = document.querySelectorAll('nav ul li a');
+
+  window.addEventListener('scroll', () => {
+    let current = '';
+    sections.forEach(section => {
+      const sectionTop = section.offsetTop - 80; // offset for navbar
+      if (pageYOffset >= sectionTop) {
+        current = section.getAttribute('id');
+      }
+    });
+
+    navLinks.forEach(link => {
+      link.classList.remove('active');
+      if (link.getAttribute('href') === '#' + current) {
+        link.classList.add('active');
+      }
+    });
+  });
+</script>
+
+</body>
+</html>
