@@ -7,6 +7,8 @@
 
 <!-- AOS Animate On Scroll CSS -->
 <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" /><!-- Swiper CSS -->
+
 
 <style>
   /* Reset */
@@ -227,7 +229,7 @@
   }
 
   /* On mobile: hide nav-links by default, show burger */
-  @media (max-width: 1768px) {
+  @media (max-width: 768px) {
     nav ul.nav-links {
       display: none;
       position: absolute;
@@ -255,6 +257,47 @@
     }
   }
 
+  #testimonials {
+    background-color: #3c6231;
+    padding: 50px 20px;
+    border-radius: 12px;
+    text-align: center;
+    color: #fff;
+  }
+
+  #testimonials h2 {
+    font-size: 2.5rem;
+    margin-bottom: 30px;
+    text-shadow: 1px 1px 3px #000;
+  }
+  .swiper {
+    width: 100%;
+    max-width: 800px;
+    margin: 0 auto;
+  }
+
+  .swiper-slide {
+    background: none;
+    text-align: center;
+    padding: 30px;
+    box-sizing: border-box;
+  }
+
+  .quote {
+    font-style: italic;
+    font-size: 1.2rem;
+    color: #fff;
+    text-shadow: 1px 1px 2px #000;
+    margin-bottom: 15px;
+  }
+
+  .author {
+    font-weight: bold;
+    color: #ffd54f;
+  }
+
+
+
 </style>
 </head>
 <body>
@@ -267,6 +310,9 @@
         <li><a href="#cultivation">Καλλιέργεια</a></li>
         <li><a href="#history">Ιστορία</a></li>
         <li><a href="#taste">Γεύση & Θρέψη</a></li>
+        <li><a href="#recipe">Συνταγές</a></li>
+        <!-- <li><a href="#video">Βίντεο</a></li> -->
+        <li><a href="#testimonials">Μαρτυρίες</a></li>
         <li><a href="#contact">Επικοινωνία</a></li>
       </ul>
     </div>
@@ -281,67 +327,121 @@
   </div>
 </header>
 
-<!-- About Section -->
-<section id="about" data-aos="fade-up">
-  <div class="container text-overlay">
-    <h2>Η Εγκλουβή - Η μικρή ορεινή κοινότητα</h2>
-    <p>Η μικρή ορεινή κοινότητα της Εγκλουβής, χτισμένη σε υψόμετρο περίπου 800 μ. στο κέντρο της Λευκάδας, καλλιεργεί εδώ και αιώνες μία από τις πιο φημισμένες ποικιλίες φακής στην Ελλάδα – τη φημισμένη φακή Εγκλουβής.</p>
-    <p>Με πλούσιο άρωμα, ξεχωριστή γεύση και υψηλή διατροφική αξία, οι φακές μας καλλιεργούνται με παραδοσιακό τρόπο σε ξερολιθικά πλατώματα, χωρίς χρήση φυτοφαρμάκων ή λιπασμάτων.</p>
-  </div>
-  <div class="image-wrapper" data-aos="zoom-in">
-    <img src="faki-egklouvis.jpg" alt="Χωράφι με φακές" />
-  </div>
-</section>
+  <main>
+  <!-- About Section -->
+  <section id="about" data-aos="fade-up">
+    <div class="container text-overlay">
+      <h2>Η Εγκλουβή - Η μικρή ορεινή κοινότητα</h2>
+      <p>Η μικρή ορεινή κοινότητα της Εγκλουβής, χτισμένη σε υψόμετρο περίπου 800 μ. στο κέντρο της Λευκάδας, καλλιεργεί εδώ και αιώνες μία από τις πιο φημισμένες ποικιλίες φακής στην Ελλάδα – τη φημισμένη φακή Εγκλουβής.</p>
+      <p>Με πλούσιο άρωμα, ξεχωριστή γεύση και υψηλή διατροφική αξία, οι φακές μας καλλιεργούνται με παραδοσιακό τρόπο σε ξερολιθικά πλατώματα, χωρίς χρήση φυτοφαρμάκων ή λιπασμάτων.</p>
+    </div>
+    <div class="image-wrapper" data-aos="zoom-in">
+      <img src="images/faki-egklouvis.jpg" alt="Χωράφι με φακές" />
+    </div>
+  </section>
 
-<!-- Cultivation Section -->
-<section id="cultivation" class="" data-aos="fade-up">
-  <div class="container text-overlay">
-    <h2>Η Καλλιέργεια - Από τη σπορά ως τη συγκομιδή</h2>
-    <p>Η καλλιέργεια γίνεται χειρωνακτικά με παραδοσιακές τεχνικές. Η σπορά ξεκινά την άνοιξη σε φυσικές συνθήκες και η συγκομιδή ολοκληρώνεται με το χέρι, το καλοκαίρι.</p>
-    <p>Η φακή στεγνώνει φυσικά, αλωνίζεται και καθαρίζεται με επιμέλεια από τον τοπικό πληθυσμό, εξασφαλίζοντας υψηλή ποιότητα χωρίς τεχνητά μέσα.</p>
-  </div>
-  <div class="image-wrapper" data-aos="zoom-in">
-    <img src="Καλλιέργεια Φακής.jpg" alt="Παραδοσιακό χωριό" />
-  </div>
-</section>
+  <!-- Cultivation Section -->
+  <section id="cultivation" class="" data-aos="fade-up">
+    <div class="container text-overlay">
+      <h2>Η Καλλιέργεια - Από τη σπορά ως τη συγκομιδή</h2>
+      <p>Η καλλιέργεια γίνεται χειρωνακτικά με παραδοσιακές τεχνικές. Η σπορά ξεκινά την άνοιξη σε φυσικές συνθήκες και η συγκομιδή ολοκληρώνεται με το χέρι, το καλοκαίρι.</p>
+      <p>Η φακή στεγνώνει φυσικά, αλωνίζεται και καθαρίζεται με επιμέλεια από τον τοπικό πληθυσμό, εξασφαλίζοντας υψηλή ποιότητα χωρίς τεχνητά μέσα.</p>
+    </div>
+    <div class="image-wrapper" data-aos="zoom-in">
+      <img src="images/Καλλιέργεια Φακής.jpg" alt="Παραδοσιακό χωριό" />
+    </div>
+  </section>
 
-<!-- History Section -->
-<section id="history" class="alt" data-aos="fade-up">
-  <div class="container text-overlay">
-    <h2>Ιστορία - Μια παράδοση αιώνων</h2>
-    <p>Οι πρώτες αναφορές στη φακή Εγκλουβής χρονολογούνται από τη Βυζαντινή περίοδο. Σήμερα αποτελεί προϊόν ΠΟΠ και είναι συνδεδεμένη με την τοπική ταυτότητα.</p>
-    <p>Κάθε Αύγουστο, η τοπική γιορτή της φακής τιμά την παράδοση, συγκεντρώνοντας ντόπιους και επισκέπτες για μουσική, χορό και φακόρυζο!</p>
-  </div>
-  <div class="image-wrapper" data-aos="zoom-in">
-    <img src="image5.webp" alt="Πλατεία χωριού" />
-  </div>
-</section>
+  <!-- History Section -->
+  <section id="history" class="alt" data-aos="fade-up">
+    <div class="container text-overlay">
+      <h2>Ιστορία - Μια παράδοση αιώνων</h2>
+      <p>Οι πρώτες αναφορές στη φακή Εγκλουβής χρονολογούνται από τη Βυζαντινή περίοδο. Σήμερα αποτελεί προϊόν ΠΟΠ και είναι συνδεδεμένη με την τοπική ταυτότητα.</p>
+      <p>Κάθε Αύγουστο, η τοπική γιορτή της φακής τιμά την παράδοση, συγκεντρώνοντας ντόπιους και επισκέπτες για μουσική, χορό και φακόρυζο!</p>
+    </div>
+    <div class="image-wrapper" data-aos="zoom-in">
+      <img src="images/image5.webp" alt="Πλατεία χωριού" />
+    </div>
+  </section>
 
-<!-- Taste & Nutrition Section -->
-<section id="taste" data-aos="fade-up">
-  <div class="container text-overlay">
-    <h2>Η Γεύση και Θρεπτική Αξία των Φακών Εγκλουβής</h2>
-    <p>Οι φακές Εγκλουβής ξεχωρίζουν για τη μοναδική τους γεύση και την πλούσια θρεπτική τους αξία. Είναι πλούσιες σε πρωτεΐνες, φυτικές ίνες, βιταμίνες και ανόργανα στοιχεία, καθιστώντας τις ιδανική επιλογή για μια υγιεινή διατροφή.</p>
-    <p>Η καλλιέργεια στον τόπο μας προσδίδει ιδιαίτερα χαρακτηριστικά, χάρη στο μοναδικό μικροκλίμα και το έδαφος της περιοχής.</p>
-  </div>
-  <div class="image-wrapper" data-aos="zoom-in">
-    <img src="proionta-caro.original.jpg" alt="Φακές σε μπολ" />
-  </div>
-</section>
+  <!-- Taste & Nutrition Section -->
+  <section id="taste" data-aos="fade-up">
+    <div class="container text-overlay">
+      <h2>Η Γεύση και Θρεπτική Αξία των Φακών Εγκλουβής</h2>
+      <p>Οι φακές Εγκλουβής ξεχωρίζουν για τη μοναδική τους γεύση και την πλούσια θρεπτική τους αξία. Είναι πλούσιες σε πρωτεΐνες, φυτικές ίνες, βιταμίνες και ανόργανα στοιχεία, καθιστώντας τις ιδανική επιλογή για μια υγιεινή διατροφή.</p>
+      <p>Η καλλιέργεια στον τόπο μας προσδίδει ιδιαίτερα χαρακτηριστικά, χάρη στο μοναδικό μικροκλίμα και το έδαφος της περιοχής.</p>
+    </div>
+    <div class="image-wrapper" data-aos="zoom-in">
+      <img src="images/proionta-caro.original.jpg" alt="Φακές σε μπολ" />
+    </div>
+  </section>
 
-<!-- Contact Section -->
-<section id="contact" class="alt2" data-aos="fade-up">
-  <div class="container text-overlay">
-    <h2>Επικοινωνία</h2>
-    <p>Για περισσότερες πληροφορίες και συνεργασίες, επικοινωνήστε μαζί μας:</p>
+  <section id="recipe" data-aos="fade-up">
+    <h2>Παραδοσιακή Συνταγή Φακής Εγκλουβής</h2>
+    <p><strong>Υλικά:</strong></p>
     <ul>
-      <li>Τηλέφωνο: +30 690 123 4567</li>
-      <li>Email: info@eglouvi-lentils.gr</li>
-      <li>Διεύθυνση: Εγκλουβή, Λευκάδα, Ελλάδα</li>
+      <li>500γρ φακές Εγκλουβής</li>
+      <li>1 μεγάλο κρεμμύδι ψιλοκομμένο</li>
+      <li>2-3 σκελίδες σκόρδο</li>
+      <li>2 φύλλα δάφνης</li>
+      <li>1/2 φλιτζάνι ελαιόλαδο</li>
+      <li>1 καρότο (προαιρετικά)</li>
+      <li>Αλάτι, πιπέρι</li>
     </ul>
-  </div>
-</section>
+    <p><strong>Εκτέλεση:</strong></p>
+    <p>Ξεπλένετε τις φακές και τις βράζετε για 5 λεπτά. Πετάτε το πρώτο νερό. Στη συνέχεια, προσθέτετε φρέσκο νερό, το κρεμμύδι, το σκόρδο, τη δάφνη και το καρότο. Μαγειρεύετε σε χαμηλή φωτιά μέχρι να μαλακώσουν. Στο τέλος, προσθέτετε το ελαιόλαδο, το αλάτι και το πιπέρι. Σερβίρετε με ψωμί και ελιές.</p>
+  </section>
 
+
+  <section id="testimonials" data-aos="fade-up">
+    <h2>Μαρτυρίες Παραγωγών/Πελατών</h2>
+    <div class="swiper mySwiper">
+      <div class="swiper-wrapper">
+        <div class="swiper-slide">
+          <p class="quote">«Καλλιεργώ φακές στην Εγκλουβή εδώ και 40 χρόνια. Η γη μας δίνει ποιότητα που δεν συγκρίνεται.»</p>
+          <p class="author">– Γιάννης Κ., παραγωγός</p>
+        </div>
+        <div class="swiper-slide">
+          <p class="quote">«Η καλλιέργεια είναι δύσκολη, αλλά η γεύση της φακής μας δικαιώνει.»</p>
+          <p class="author">– Γιώργος Κ., παραγωγός</p>
+        </div>
+        <div class="swiper-slide">
+          <p class="quote">«Η Εγκλουβή είναι το σπίτι μου. Οι φακές είναι το καμάρι μας.»</p>
+          <p class="author">– Βάσια Κ., παραγωγός</p>
+        </div>
+        <div class="swiper-slide">
+          <p class="quote">«Καλλιεργώ φακές όπως με έμαθε ο παππούς μου – με σεβασμό στη γη και την παράδοση.»</p>
+          <p class="author">– Γιώργος Μ., παραγωγός</p>
+        </div>
+        <div class="swiper-slide">
+          <p class="quote">«Η φακή Εγκλουβής δεν είναι μόνο προϊόν. Είναι ιστορία και μνήμη.»</p>
+          <p class="author">– Ελένη Κ., παραγωγός</p>
+        </div>
+        <div class="swiper-slide">
+          <p class="quote">««Οι φακές μας μεγαλώνουν χωρίς χημικά, μόνο με τον ήλιο και τον αέρα του βουνού.»</p>
+          <p class="author">– Σπύρος Λ., παραγωγός</p>
+        </div>
+      </div>
+      <div class="swiper-pagination"></div>
+    </div>
+    <div class="image-wrapper" data-aos="zoom-in">
+      <img src="images/paragwgoi.jpg" alt="Παραγωγοί" />
+    </div>
+  </section>
+
+  <!-- Contact Section -->
+  <section id="contact" class="alt2" data-aos="fade-up">
+    <div class="container text-overlay">
+      <h2>Επικοινωνία</h2>
+      <p>Για περισσότερες πληροφορίες και παραγγελίες, επικοινωνήστε μαζί μας:</p>
+      <ul>
+        <li>Τηλέφωνο: +30 690 123 4567</li>
+        <li>Email: info@eglouvi-lentils.gr</li>
+        <li>Διεύθυνση: Εγκλουβή, Λευκάδα, Ελλάδα</li>
+      </ul>
+    </div>
+  </section>
+<main>
 <footer>
   <p>© 2025 Φακές Εγκλουβής | Όλα τα δικαιώματα διατηρούνται</p>
   <p><a href="#top">Επιστροφή στην κορυφή ↑</a></p>
@@ -379,32 +479,41 @@
   
 </script>
 <script>
-  document.querySelector('.burger').addEventListener('click', function () {
+  document.addEventListener('DOMContentLoaded', () => {
+    const burger = document.querySelector('.burger');
     const nav = document.querySelector('.nav-links');
-    nav.classList.toggle('active');
+
+    burger.addEventListener('click', (e) => {
+      e.stopPropagation(); // prevent document listener from firing
+      nav.classList.toggle('active');
+    });
+
+    // Click outside to close
+    document.addEventListener('click', (e) => {
+      if (!nav.contains(e.target) && !burger.contains(e.target)) {
+        nav.classList.remove('active');
+      }
+    });
+
+    // Close when clicking a link
+    nav.querySelectorAll('a').forEach(link => {
+      link.addEventListener('click', () => {
+        nav.classList.remove('active');
+      });
+    });
   });
 </script>
+<!-- Swiper JS (add near closing body tag) -->
+<script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
 <script>
-  const burger = document.querySelector('.burger');
-  const nav = document.querySelector('.nav-links');
-
-  // Toggle nav on burger click
-  burger.addEventListener('click', (e) => {
-    e.stopPropagation(); // Prevent immediate close
-    nav.classList.toggle('active');
-  });
-
-  // Close menu when clicking outside
-  document.addEventListener('click', (e) => {
-    if (!nav.contains(e.target) && !burger.contains(e.target)) {
-      nav.classList.remove('active');
-    }
-  });
-  // Close menu on link click (optional)
-  nav.querySelectorAll('a').forEach(link => {
-    link.addEventListener('click', () => {
-      nav.classList.remove('active');
-    });
+  new Swiper(".mySwiper", {
+    slidesPerView: 1,
+    spaceBetween: 20,
+    loop: true,
+    pagination: {
+      el: ".swiper-pagination",
+      clickable: true,
+    },
   });
 </script>
 
