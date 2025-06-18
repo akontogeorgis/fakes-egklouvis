@@ -204,55 +204,75 @@
     }
   }
 
-  /* burger
+  /*
+  *burger
   */
-  .nav-links {
-    display: flex;
-    list-style: none;
-    padding: 0;
-  }
-
+  /* --- Burger button styling --- */
   .burger {
-    display: none;
-    font-size: 2rem;
+    display: none; /* hidden on desktop */
+    font-size: 2.2rem;
     background: none;
     border: none;
+    color: #ffd54f;
     cursor: pointer;
   }
 
-  /* On small screens */
-  @media (max-width: 600px) {
-    .nav-links {
+  /* Make the ul nav-links a class for targeting */
+  nav ul.nav-links {
+    list-style: none;
+    display: flex; /* keep horizontal on desktop */
+    gap: 22px;
+    margin: 0;
+    padding: 0;
+  }
+
+  /* On mobile: hide nav-links by default, show burger */
+  @media (max-width: 1768px) {
+    nav ul.nav-links {
       display: none;
+      position: absolute;
+      top: 60px; /* below navbar */
+      right: 20px;
+      background: #2e4a2e;
       flex-direction: column;
+      width: 180px;
+      padding: 15px 10px;
+      border-radius: 8px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.7);
+      z-index: 200; /* above other content */
     }
+
+    nav ul.nav-links.active {
+      display: flex;
+    }
+
+    nav ul.nav-links li {
+      margin: 10px 0;
+    }
+
     .burger {
       display: block;
-    }
-    .nav-links.active {
-      display: flex;
     }
   }
 
 </style>
 </head>
 <body>
-<nav>
-  <div class="container">
-    <div class="logo">Φακές Εγκλουβής</div>
-    <button class="burger" aria-label="Toggle menu">&#9776;</button>
-    <ul class="nav-links">
-      <li><a href="#about" class="active">Η Εγκλουβή</a></li>
-      <li><a href="#cultivation">Καλλιέργεια</a></li>
-      <li><a href="#history">Ιστορία</a></li>
-      <li><a href="#taste">Γεύση & Θρέψη</a></li>
-      <li><a href="#contact">Επικοινωνία</a></li>
-    </ul>
-  </div>
+  <nav>
+    <div class="container">
+      <div class="logo">Φακές Εγκλουβής</div>
+      <button class="burger" aria-label="Toggle menu">&#9776;</button>
+      <ul class="nav-links">
+        <li><a href="#about" class="active">Η Εγκλουβή</a></li>
+        <li><a href="#cultivation">Καλλιέργεια</a></li>
+        <li><a href="#history">Ιστορία</a></li>
+        <li><a href="#taste">Γεύση & Θρέψη</a></li>
+        <li><a href="#contact">Επικοινωνία</a></li>
+      </ul>
+    </div>
+  </nav>
+  
 
-</nav>
-
-<div class="spacer"></div>
 
 <header>
   <div class="header-text" data-aos="fade-down">
@@ -355,13 +375,13 @@
       }
     });
   });
+
+  
 </script>
 <script>
-  const burger = document.querySelector('.burger');
-  const navLinks = document.querySelector('.nav-links');
-
-  burger.addEventListener('click', () => {
-    navLinks.classList.toggle('active');
+  document.querySelector('.burger').addEventListener('click', function () {
+    const nav = document.querySelector('.nav-links');
+    nav.classList.toggle('active');
   });
 </script>
 </body>
